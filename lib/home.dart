@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // stateless widget
@@ -7,6 +8,9 @@ class HomeScreen extends StatelessWidget {
   //Scaffold
   @override
   Widget build(BuildContext context) {
+    List<String> toDos=[];
+    // To control TextField data
+    TextEditingController TaskController=TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Build'),
@@ -15,21 +19,36 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child:Column(
           children: [
-            // Container below is like creating a div in box shape.Spacer is used for giving space between them
-            // Container 1 tu vari .Sizebox tar theke halka
-            // SizedBox(
-            //   child: Text("This is SizeBox"),
-            //
-            // ),
-            Container(height: 100,width: 100,color: Colors.red),
-            // We can also use size box as spacer.Below size box acting as spacer.
+
+            Padding(
+              // padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+              padding: const EdgeInsets.only(top:10 ,right:10 ,bottom:10 ,left:20),
+              child: TextField(
+                controller: TaskController,
+                onChanged: (value){
+                  print(value);
+                },
+                decoration: InputDecoration(
+                  labelText: "Enter your Task",
+                ),
+              ),
+            ),
+
+            // Listview makes everything responsive.Lisview er 1 ta size lage r eti sizebox er vitor e thake
             SizedBox(
               height: 100,
+              width: 100,
+              child: ListView(
+                children: [
+                  // kono text ke tar container er  center e nite hole below code
+                  // Center(child:Text('data')),
+                  Text('data'),
+                  Text('data'),
+                  Text('data'),
+                ],
+              ),
             ),
-            Container(height: 100,width: 100,color: Colors.red),
-            Spacer(),
-            Container(height: 100,width: 100,color: Colors.red),
-            Spacer(),
+
           ],
 
 

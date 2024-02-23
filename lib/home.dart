@@ -13,21 +13,16 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Container(
-          // Container design
-          height: 100,
-          width: 100,
-          // color: Colors.cyan,
-          decoration: BoxDecoration(
-            color: Colors.cyan,
-            borderRadius: BorderRadius.circular(20)
-
-          ),
-          child: Text(
-            'Hello world',
-            style: TextStyle(
-                fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
-          ),
+        child:Column(
+          children: [
+            // Column can hold multiple children.The text below will show in column-wise.We can also use row for row wise display of below text.
+            Text('Hello world'),
+            Text('Hello world'),
+            Text('Hello world'),
+            Text('Hello world'),
+            Text('Hello world'),
+            Text('Hello world'),
+          ],
         ),
       ),
     );

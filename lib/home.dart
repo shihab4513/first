@@ -15,16 +15,28 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child:Column(
           children: [
-            // Column can hold multiple children.The text below will show in column-wise.We can also use row for row wise display of below text.
-            Text('Hello world'),
-            Text('Hello world'),
-            Text('Hello world'),
-            Text('Hello world'),
-            Text('Hello world'),
-            Text('Hello world'),
+            // Container below is like creating a div in box shape.Spacer is used for giving space between them
+            // Container 1 tu vari .Sizebox tar theke halka
+            // SizedBox(
+            //   child: Text("This is SizeBox"),
+            //
+            // ),
+            Container(height: 100,width: 100,color: Colors.red),
+            // We can also use size box as spacer.Below size box acting as spacer.
+            SizedBox(
+              height: 100,
+            ),
+            Container(height: 100,width: 100,color: Colors.red),
+            Spacer(),
+            Container(height: 100,width: 100,color: Colors.red),
+            Spacer(),
           ],
+
+
         ),
       ),
+      // floating action button holo ja e hok eta sob somoy screen e floating obostahai thakbe.
+      floatingActionButton: FloatingActionButton(onPressed: () {  },child: Icon(Icons.add),),
     );
   }
 }
